@@ -1,10 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300);
+
 /* ==========================================================================
    Table of Contents
    ========================================================================== */
 
 /*
 
-    0.  Normalize
     1.  Icons
     2.  General
     3.  Utilities
@@ -19,84 +20,6 @@
     12. Animations
 
 */
-
-/* ==========================================================================
-   0. Normalize.css v2.1.3 | MIT License | git.io/normalize | (minified)
-   ========================================================================== */
-
-article, aside, details,
-figcaption, figure,
-footer, header, hgroup,
-main, nav, section,
-summary { display: block; }
-audio, canvas, video { display: inline-block; }
-audio:not([controls]) { display: none; height: 0; }
-[hidden], template { display: none; }
-html {
-   font-family: sans-serif;
-   -ms-text-size-adjust: 100%;
-   -webkit-text-size-adjust: 100%;
-}
-body { margin: 0; }
-a { background: transparent; }
-a:focus { outline: thin dotted; }
-a:active, a:hover { outline: 0; }
-h1 { font-size: 2em; margin: 0.67em 0; }
-abbr[title] { border-bottom: 1px dotted; }
-b, strong { font-weight: 700; }
-dfn { font-style: italic; }
-hr {
-   -moz-box-sizing: content-box;
-   box-sizing: content-box;
-   height: 0;
-}
-mark { background: #FF0; color: #000; }
-code, kbd, pre,
-samp { font-family: monospace, serif; font-size: 1em; }
-pre { white-space: pre-wrap; }
-q { quotes: "\201C" "\201D" "\2018" "\2019"; }
-small { font-size: 80%; }
-sub, sup {
-   font-size: 75%;
-   line-height: 0;
-   position: relative;
-   vertical-align: baseline;
-}
-sup { top: -0.5em; }
-sub { bottom: -0.25em; }
-img { border: 0; }
-svg:not(:root) { overflow: hidden; }
-figure { margin: 0; }
-fieldset {
-   border: 1px solid #c0c0c0;
-   margin: 0 2px;
-   padding: 0.35em 0.625em 0.75em;
-}
-legend { border: 0; padding: 0; }
-button, input, select,
-textarea { font-family: inherit; font-size: 100%; margin: 0; }
-button, input { line-height: normal; }
-button, select { text-transform: none; }
-button, html input[type="button"],
-input[type="reset"], input[type="submit"] {
-   -webkit-appearance: button;
-   cursor: pointer;
-}
-button[disabled], html input[disabled] { cursor: default; }
-input[type="checkbox"],
-input[type="radio"] { box-sizing: border-box; padding: 0; }
-input[type="search"] {
-   -webkit-appearance: textfield;
-   -moz-box-sizing: content-box;
-   -webkit-box-sizing: content-box;
-   box-sizing: content-box;
-}
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-button::-moz-focus-inner,
-input::-moz-focus-inner { border: 0; padding: 0; }
-textarea { overflow: auto; vertical-align: top; }
-table { border-collapse: collapse; border-spacing: 0; }
 
 
 /* ==========================================================================
@@ -165,7 +88,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
-
+/*
 html {
     height: 100%;
     max-height: 100%;
@@ -282,7 +205,7 @@ li {
 li li {
     margin: 0;
 }
-
+*/
 hr {
     display: block;
     height: 1px;
@@ -468,6 +391,20 @@ margin on the iframe, cause it breaks stuff. */
    4. General - The main styles for the the theme
    ========================================================================== */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300);
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin-bottom: 80px;
+}
+
 /* Big cover image on the home page */
 .main-header {
     position: relative;
@@ -592,7 +529,7 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 0;
     margin-right: 8px;
 }
-
+/*
 .subscribe-button {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -616,6 +553,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 9px;
     margin-right: 6px;
 }
+*/
 
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
@@ -682,7 +620,8 @@ margin on the iframe, cause it breaks stuff. */
 .no-cover.main-header {
     min-height: 160px;
     max-height: 40%;
-    background: #f5f8fa;
+    background: #fff;
+    padding-top: 51px;
 }
 
 .no-cover .page-title {
@@ -697,6 +636,47 @@ margin on the iframe, cause it breaks stuff. */
 .no-cover .main-nav.overlay .subscribe-button {
     color: rgba(0,0,0,0.4);
     border-color: rgba(0,0,0,0.3);
+}
+
+/* Yodlr------------------------------*/
+.navbar {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 22px;
+  line-height: 50px;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  display: inline-block;
+  height: 41px;
+  width: 78px;
+  background: url(../img/yodlr_logo_40.png) no-repeat 0 0;
+  font-size: 0;
+  margin-top: 9px;
+}
+
+.home .navbar-brand {
+  visibility: hidden;
+}
+
+.navbar-login {
+  font-family: 'Open Sans', sans-serif;
+}
+
+form.navbar-login {
+  padding: 15px 15px 0 15px;
+  width: 250px;
+}
+
+form.navbar-login > .control-group:not(:last-of-type) {
+  margin-bottom: 15px;
+}
+
+form.navbar-login > button {
+  width: 100%;
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -1295,40 +1275,51 @@ body:not(.post-template) .post-title {
    9. Footer - The bottom of every page
    ========================================================================== */
 
-.site-footer {
-    position: relative;
-    margin: 8rem 0 0 0;
-    padding: 0.5rem 15px;
-    border-top: #EBF2F6 1px solid;
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.75em;
-    color: #BBC7CC;
+.footer {
+margin-top: 50px;
+padding-top: 20px;
+color: #ef8537;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: auto;
+background-color: #333;
 }
 
-.site-footer a {
-    color: #BBC7CC;
-    text-decoration: none;
-    font-weight: bold;
+.yodlr-footer {
+  margin-top: 50px;
+  padding: 20px 0 5px;
+  color: #ef8537;
+}
+.yodlr-footer a,
+a:focus,
+a:visited {
+  text-decoration: none;
+  color: #ef8537
+}
+.yodlr-footer a:hover {
+  text-decoration: none;
+  color: #428bca
 }
 
-.site-footer a:hover {
-    color: #50585D;
+.yodlr-footer p {
+  margin: 0 0 10px;
+  display: inline-block;
 }
 
-.poweredby {
-    display: block;
-    width: 45%;
-    float: right;
-    text-align: right;
+.text-muted i.fa {
+  color: #999;
+  vertical-align: middle;
+  margin: 0 0 0 10px;
 }
 
-.copyright {
-    display: block;
-    width: 45%;
-    float: left;
+.text-muted i.fa-twitter-square:hover {
+  color: #00aced;
 }
 
+.text-muted i.fa-linkedin-square:hover {
+  color: #0073b2;
+}
 
 /* ==========================================================================
    10. Media Queries - Smaller than 900px
