@@ -662,6 +662,11 @@ body {
   visibility: hidden;
 }
 
+@media (max-width: 767px) {
+    #navbarCollapseDiv {
+        display: none;
+    }
+}
 .navbar-login {
   font-family: 'Open Sans', sans-serif;
 }
