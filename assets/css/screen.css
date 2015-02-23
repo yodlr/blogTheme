@@ -645,9 +645,6 @@ body {
     margin-top: 55px;
 }
 
-.navbar-header {
-    border-bottom: 1px solid #e7e7e7;
-}
 .navbar-brand {
   display: inline-block;
   height: 41px;
@@ -687,6 +684,7 @@ body {
 
     .navbar-header {
         background: #f8f8f8;
+        border-bottom: 1px solid #e7e7e7;
     }
 
     #navbarCollapseDiv {
