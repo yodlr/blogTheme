@@ -654,6 +654,10 @@ body {
   margin-top: 9px;
 }
 
+.navbar>.container .navbar-brand {
+    margin-left: 15px;
+}
+
 .home .navbar-brand {
   visibility: hidden;
 }
