@@ -727,7 +727,7 @@ h2 {
 }
 
 .yodlr-footer a,
-a:focus {
+.yodlr-footer a:focus {
   text-decoration: none;
   color: #fff
 }
@@ -801,9 +801,11 @@ body:not(.post-template) .post-title {
     font-size: 3.6rem;
 }
 
+
 .post-title a {
     text-decoration: none;
 }
+
 
 .post-excerpt p {
     margin: 0;
