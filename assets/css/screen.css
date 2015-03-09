@@ -792,14 +792,9 @@ a:focus {
     position: relative;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: #ccc 1px solid;
     word-break: break-word;
     hyphens: auto;
-}
-
-.home-template .post {
-    border-bottom: 10px solid #ccc;
-    border-radius: 0 0 4rem 4rem;
 }
 
 body:not(.post-template) .post-title {
