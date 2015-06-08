@@ -312,10 +312,11 @@ h2 {
   background-color: #fefefe;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  padding: 30px 30px 0; /* different then marketing and yakkity */
   border-left: 10px solid #ef8537;
   border-right: 10px solid #ef8537;
-  min-height: 89vh;
+  padding: 30px 30px 0; /* different then marketing and yakkity */
+  min-height: 92vh;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1780px) { /* decorative side shapes for wide screens */
@@ -330,21 +331,38 @@ h2 {
   }
 
   body {
-    background-repeat: no-repeat;
-    background-position: top right;
-    background-image:
-          radial-gradient(ellipse at 300px -530px, rgba(231,231,231,0) 0, rgba(231,231,231,0) 320px, #e7e7e7 321px, #e7e7e7),
-          radial-gradient(circle at 330px 210px, rgba(215,215,215,0) 0, rgba(215,215,215,0) 210px, rgba(215,215,215,1) 211px, rgba(215,215,215,1)),
-          radial-gradient(circle at 330px 0, rgba(215,215,215,0) 0, rgba(215,215,215,0) 210px, rgba(215,215,215,1) 211px, rgba(215,215,215,1)),
-          linear-gradient(#bcbcbc, #bcbcbc),
-          radial-gradient(circle at 0 210px, rgba(188,188,188,0) 0, rgba(188,188,188,0) 209px, #bcbcbc 210px, #bcbcbc),
-          radial-gradient(circle at 0 0, rgba(188,188,188,0) 0, rgba(188,188,188,0) 209px, #bcbcbc 210px, #bcbcbc),
-          linear-gradient(to right, rgba(215,215,215,1) 0, rgba(215,215,215,1) 120px, #e7e7e7 120px, #e7e7e7 50%, #ccc 50%, #ccc 100%);
-    background-size:  620px 800px, 330px 210px, 330px 210px, 120px 100%, 330px 210px,330px 210px, auto;
-    background-position: -290px bottom, top left, bottom left, top right, top right, bottom right,top left;
-    background-attachment: fixed;
+    background-image: linear-gradient(to right, #d7d7d7 0, #d7d7d7 50%, #bcbcbc 50%, #bcbcbc 100%);
   }
 
+  .bigbubble {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 120px;
+    right: 120px;
+    border-radius: 210px;
+    background-color: #e7e7e7;
+    z-index: -1;
+    background-image: linear-gradient(to right, #e7e7e7 0, #e7e7e7 50%, #ccc 50%, #ccc 100%);
+  }
+
+  .tail {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 330px;
+    height: 210px;
+    background-color: #e7e7e7;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .tail div {
+    height: 210px;
+    width: 210px;
+    border-radius: 0 0 210px 0;
+    background-color: #d7d7d7;
+  }
 }
 
 /* Big cover image on the home page */
@@ -558,6 +576,131 @@ h2 {
     margin-top: 55px;
 }
 
+.pointToControls {
+  height: 50px;
+  background-color: #5a4681;
+  position: relative;
+}
+
+/* yodlr demo ----*/
+
+.arrow1,
+.arrow2,
+.arrow3 {
+  background-color: #5a4681;
+  margin: 30px 30px 0 0;
+  height: 30px;
+  width: 80px;
+  background-repeat: no-repeat;
+}
+
+.arrow1 {
+    background-image: linear-gradient(90deg, #ef8537 0%, #ef8537 43%, #f2dede 43%, #f2dede 57%, #ef8537 57% , #ef8537);
+    background-size: 40px 18px;
+    background-position: 20px 9px;
+}
+.arrow2 {
+    background-image: linear-gradient(-45deg, #f2dede 5px, #ef8537 5px);
+    background-size: 40px 9px;
+    background-position: 0 3px;
+}
+.arrow3 {
+    background-image: linear-gradient(45deg, #f2dede 5px, #ef8537 5px);
+    background-size: 40px 9px;
+    background-position: 40px 3px;
+}
+
+.pointToControls::before,
+.pointToControls::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 30px;
+    background-size: 40px 18px, 40px 9px, 40px 9px;
+    background-position: 20px 9px, 0px 3px, 40px 3px;
+    background-repeat: repeat-x;
+}
+.pointToControls::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 43%, #f2dede 43%, #f2dede 57%, transparent 57% , transparent),
+    linear-gradient(-45deg, #f2dede 5px, transparent 5px),
+    linear-gradient(45deg, #f2dede 5px, transparent 5px);
+    -webkit-animation: movearrows 2s 15;
+    animation: movearrows 2s 15;
+}
+.pointToControls::after {
+    top: 10px;
+    left: -20px;
+    right: 20px;
+    background-image: linear-gradient(90deg, transparent 0%, transparent 43%, #a94442 43%, #a94442 57%, transparent 57% , transparent),
+    linear-gradient(-45deg, #a94442 5px, transparent 5px),
+    linear-gradient(45deg, #a94442 5px, transparent 5px);
+    -webkit-animation: movemorearrows 2s 15;
+    animation: movemorearrows 2s 15;
+}
+
+@-webkit-keyframes movearrows {
+  0%   {
+    top: 10px;
+    left: -20px;
+    }
+  50% {
+    top: 0;
+    left: 0;
+    }
+  100% {
+    top: 10px;
+    left: -20px;
+    }
+}
+
+@keyframes movearrows {
+  0%   {
+    top: 0;
+    left: 0;
+    }
+  50% {
+    top: 10px;
+    left: 10px;
+    }
+  100% {
+    top: 0;
+    left: 0;
+    }
+}
+
+@-webkit-keyframes movemorearrows {
+  0%   {
+    top: 0;
+    left: 0;
+    }
+  50% {
+    top: 10px;
+    left: 10px;
+    }
+  100% {
+    top: 0;
+    left: 0;
+    }
+}
+
+@keyframes movemorearrows {
+  0%   {
+    top: 0;
+    left: 0;
+    }
+  50% {
+    top: 10px;
+    left: 10px;
+    }
+  100% {
+    top: 0;
+    left: 0;
+    }
+}
+
 /* Navbar----------------------------------------*/
 
 .navbar-default {
@@ -578,51 +721,58 @@ h2 {
 }
 
 .navbar .container {
-  background-image: linear-gradient(to top, #ef8537 0, #ef8537 10px,  #e7e7e7 10px, #e7e7e7 100%);
+  background-color: #e7e7e7;
   background-repeat: no-repeat;
   background-position: top right;
   padding-bottom: 10px;
   height: 60px;
   position: relative;
   padding: 0;
+  border-bottom: 10px solid #ef8537;
 }
 
-.navbar .container::before {
+@media (min-width: 767px) {
+  .navbar .container {
+    background-image: linear-gradient(to left, #ccc 0, #ccc 63px,  #e7e7e7 83px, #e7e7e7 100%);
+  }
+}
+
+.navbar .container::before { /* fade at top */
   content: "";
   display: block;
   height: 15px;
   left: 10px;
   position: absolute;
-  bottom: -15px;
+  bottom: -25px;
   right: 10px;
+  pointer-events: none;
   background-image: linear-gradient(#fff, rgba(255,255,255,0));
 }
 
-.home .navbar .container::before {
-  content: "";
-  display: block;
+.decorative-corner-right,
+.decorative-corner-right div {
   height: 63px;
   width: 63px;
-  position: absolute;
-  left: 0;
-  bottom: -53px;
-  background-image: radial-gradient(at bottom right, rgba(239, 133, 55, 0) 0, rgba(239, 133, 55, 0) 52px, #ef8537 53px, #ef8537 63px, #e7e7e7 64px, #e7e7e7);
-  background-repeat: no-repeat;
+  pointer-events: none;
 }
 
-.navbar .container::after {
-  content: "";
-  display: block;
-  height: 63px;
-  width: 63px;
+.decorative-corner-right {
   position: absolute;
-  bottom: -53px;
+  bottom: -63px;
   right: 0;
-  background-image: radial-gradient(at bottom left, rgba(239,133,55,0) 0, rgba(239,133,55,0) 52px, #ef8537 53px, #ef8537 63px, #ccc 64px, #ccc);
+  background-image: radial-gradient(at bottom left, rgba(239,133,55,0) 0, rgba(239,133,55,0) 62px, #ccc 62px, #ccc);
 }
 
-.navbar-collapse {
-  background-image: linear-gradient(-90deg, #ccc 0, #ccc 50px, transparent 51px,  transparent);
+.decorative-corner-right div {
+  border-radius: 0 63px 0 0;
+  border-top: 10px solid #ef8537;
+  border-right: 10px solid #ef8537;
+}
+
+@media (min-width: 767px) {
+  .navbar-collapse {
+    background-image: linear-gradient(-90deg, #ccc 0, #ccc 50px, transparent 51px,  transparent);
+  }
 }
 
 /* show normal links instead of mobile button */
@@ -678,7 +828,6 @@ h2 {
   color: #fff;
   background-color: transparent;
 }
-
 
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus,
@@ -753,6 +902,8 @@ h2 {
   padding: 20px 50px 5px;
   border-left: 10px solid #ef8537;
   border-right: 10px solid #ef8537;
+  border-bottom: none;
+  min-height: 61px;
 }
 
 .yodlr-footer a,
@@ -1013,11 +1164,11 @@ body:not(.post-template) .post-title {
     font-size: 1.4rem;
     line-height: 1;
     font-style: italic;
-    color: #9595959;
+    color: #959595;
 }
 
 .author-meta a {
-    color: #9595959;
+    color: #959595;
 }
 .author-meta a:hover {
     color: #111;
@@ -1340,8 +1491,6 @@ body:not(.post-template) .post-title {
     left: 50%;
     margin-left: -5px;
     background: #FFF;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
 }
