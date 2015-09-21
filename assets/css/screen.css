@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Open+Sans:300,400,700);
 
 /* marketing css
 orange #ef8537 rgb(239,133,55)
@@ -308,6 +308,12 @@ h2 {
   color: #5a4681;
 }
 
+.yodlr-content h1 {
+    font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+    text-transform: uppercase;
+    color: #5a4681;
+}
+
 .yodlr-content { /* used on several partials */
   background-color: #fefefe;
   font-family: 'Open Sans', sans-serif;
@@ -534,8 +540,8 @@ h2 {
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
-    color: #fff;
+    font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+    text-transform: uppercase;
 }
 
 .page-description {
@@ -840,13 +846,13 @@ h2 {
 @media (max-width: 767px) { /* for login form too */
 
   .home .navbar .container::before,
-  .navbar .container::after {
+  .navbar .container::after,
+  .decorative-corner-right {
     display: none;
   }
 
   .navbar-nav {
-    background-color: #ccc;
-    background-image: linear-gradient(to right, #e7e7e7, #ccc);
+    background-color: #f8f8f8;
     border-radius: 0;
     margin-right: -15px;
     text-align: right;
@@ -951,7 +957,7 @@ h2 {
 
   .yodlr-footer p {
     margin: 0 -10px 10px;
-    font-size: 13px;
+    font-size: 11px;
     text-align: center;
     display: block;
     float: none;
@@ -1645,6 +1651,7 @@ body:not(.post-template) .post-title {
     .yodlr-content {
         padding-right: 10px;
         padding-left: 10px;
+        padding-top: 61px;
     }
 
     .main-header {
@@ -1654,6 +1661,7 @@ body:not(.post-template) .post-title {
 
     .no-cover.main-header {
         height: 30%;
+        padding: 0;
     }
 
     .archive-template .main-header {
@@ -1774,6 +1782,14 @@ body:not(.post-template) .post-title {
 
     .page-description {
         font-size: 1.6rem;
+    }
+
+    .post-template h1 {
+      margin-top: .67em;
+    }
+
+    .home-template h2 {
+      font-family: "Open Sans Condensed", "Open Sans", sans-serif;
     }
 
     h1, h2, h3,
